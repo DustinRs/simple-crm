@@ -1,0 +1,10 @@
+div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 80px;
+    padding: 16px;
+>mat-card {
+    min-width: 33%;
+}
+}
