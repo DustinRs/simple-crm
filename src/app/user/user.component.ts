@@ -18,7 +18,8 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { RouterModule } from '@angular/router';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-user',
@@ -30,7 +31,8 @@ import { RouterModule } from '@angular/router';
     MatTooltipModule,
     MatCardModule,
     CommonModule,
-    
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule,
   ],
   templateUrl: './user.component.html',
@@ -42,7 +44,7 @@ export class UserComponent {
   firestore: Firestore = inject(Firestore);
   items$: Observable<any[]>;
   loading = false;
-  imgUrl:any;
+  imgUrl: any;
 
   constructor(public dialog: MatDialog) {
     const aCollection = collection(this.firestore, 'Users');
@@ -63,6 +65,4 @@ export class UserComponent {
     await deleteDoc(doc(this.firestore, 'Users', id));
     window.location.href = 'user';
   }
-
-  
 }

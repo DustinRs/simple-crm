@@ -1,16 +1,22 @@
 <div class="userDiv">
     <mat-card class="list">
       <table>
-        <h1>Customer</h1>
+        <div style="padding: 16px;">
+          <h1>Customers</h1>
+          <mat-form-field appearance="outline">
+            <mat-label>Search Customer</mat-label>
+            <input matInput>
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </div>
+        
         <tr>
-          <th></th>
           <th>Name</th>
           <th>Email</th>
           <th>Phone</th>
           <th></th>
         </tr>
         <tr *ngFor="let user of allUsers" [routerLink]="user.id">
-          <td><img src="{{ user.club }}" alt="" /></td>
           <td><mat-icon>person</mat-icon>{{ user.firstName }} {{ user.lastName }}</td>
           <td><mat-icon>mail</mat-icon>{{ user.email }}</td>
           <td><mat-icon>phone</mat-icon>{{ user.phone }}</td>
