@@ -1,0 +1,11 @@
+.dialog {
+    padding: 16px;
+    position: relative;
+}
+
+mat-progress-bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+}

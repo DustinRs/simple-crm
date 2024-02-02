@@ -1,0 +1,32 @@
+<div class="userDiv">
+    <mat-card class="list">
+      <table>
+        <h1>Customer</h1>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let user of allUsers" [routerLink]="user.id">
+          <td><img src="{{ user.club }}" alt="" /></td>
+          <td><mat-icon>person</mat-icon>{{ user.firstName }} {{ user.lastName }}</td>
+          <td><mat-icon>mail</mat-icon>{{ user.email }}</td>
+          <td><mat-icon>phone</mat-icon>{{ user.phone }}</td>
+          <td class="deleteButton" (click)="deleteUser(user.id)">
+            <mat-icon>delete</mat-icon>
+          </td>
+        </tr>
+      </table>
+    </mat-card>
+  </div>
+  <button
+    (click)="openDialog()"
+    mat-fab
+    color="primary"
+    matTooltip="Add User"
+    matTooltipPosition="above"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
